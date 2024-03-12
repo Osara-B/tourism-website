@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> LankaWay | Feedback</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/LogoOnlyBlue.png" type="image/x-icon">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/Student02.css">
+        
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Varela' rel="stylesheet">
+        <style>
+            form{
+                font-size: 17px;
+            }
+
+        </style>
+
+        <script>
+
+            // Function that runs when form is submitted
+            // Sucessfull submission - true returned, Comments Topic and Form hidden, thank you displayed, email with data created
+            // Mandatory fields are empty - false returned, Error messages displayed, form doesnt submit 
+            function onSubmission(){
+                if(validateForm1() && validateForm2()){
+                    document.getElementById("CommentsTopic").style.display = "none";
+                    document.getElementById("myForm").style.display = "none";
+                    document.getElementById("onSubmission").style.display="block";
+                    return true;
+                }
+                return false;
+            }
+
+            // Validates the radio buttons to make sure at least on is checked
+            function validateForm1(){
+                console.log("newForRadio running");
+                var rating = document.getElementsByName("rating");
+                if (rating[0].checked || rating[1].checked || rating[2].checked || rating[3].checked|| rating[4].checked
+                || rating[5].checked|| rating[6].checked|| rating[7].checked
+                || rating[8].checked|| rating[9].checked|| rating[10].checked){
+                    return true;
+                }
+                display1();
+                return false;
+            }
+
+            // Validates the text area to make sure the field isnt empty
+            function validateForm2() {
+                let x = document.forms["myForm"]["reasoning"].value;
+                if (x == "") {
+                    display2();
+                    return false
+                }
+                return true
+            }
+
+            // Displays the error message if the radio buttons aren't checked
+            function display1() {
+                document.getElementById("Error1").style.display = "block";
+            }
+
+            // Displays the error message if text are is empty
+            function display2() {
+                document.getElementById("Error2").style.display = "block";
+                
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <!-- NAVIGATION BAR -->
+		<div class="NavBar">
+            <ul>
+                <li class="image"> <a href="MainPage.html"><img src="images/LogoWhite.png" alt="Logo" style="height:60px"> </a></li>
+                <li><a href="aboutUs.html">ABOUT US</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="siteMap.html"> SITE MAP</a></li>
+                <li><a href="quiz.html"> QUIZ</a></li>			
+                <li><a href="shop.html"> SHOP</a></li>
+                <li class="active" ><a href="comments.html"> COMMENTS </a></li>
+                <li><a href="MainPage.html"> HOME </a></li>
+            </ul>
+            </div>
+        
+        <!-- Topic -->
+        <div class="CommentsTopic" id="CommentsTopic">
+            Share your feedback!
+        </div>
+
+        <!-- Form with the input fields - radio buttons, text area, select options -->
+        <div id="myForm">    
+             
+            <!-- Runs the function onSubmisson when submitted, mails readable content to given email if input is validated -->
+            <form name="myForm" action="mailto:osara.20221009@iit.ac.lk?subject=Submitted&nbsp;Form&nbsp;Content" 
+            method="post" enctype="text/plain" onsubmit="return onSubmission()">
+            
+                <!-- Radio buttons inputs with the same "name" -->
+                <div class="Question">
+                    <label>
+                        How satisfied are you with our website? Choose from 0 to 10, where 0 is extremely dissatisfied and 10 is extremely satisfied
+                    </label><br><br>
+
+                    <div class="radio">
+                        <label for="rating0"> 0 </label>
+                        <input type="radio" name="rating" id="rating0" value="0"> 
+                    </div>
+                    <div class="radio">
+                        <label for="rating1"> 1 </label>
+                        <input type="radio" name="rating" id="rating1" value="1"> 
+                    </div>
+                    <div class="radio">
+                        <label for="rating2"> 2 </label>
+                        <input type="radio" name="rating" id="rating2" value="2"> 
+                    </div>
+                    <div class="radio">
+                        <label for="rating3"> 3 </label>
+                        <input type="radio" name="rating" id="rating3" value="3"> 
+                    </div>
+                    <div class="radio">
+                        <label for="rating4"> 4 </label>
+                        <input type="radio" name="rating" id="rating4" value="4"> 
+                    </div>
+                    <div class="radio">
+                        <label for="rating5"> 5 </label>
+                        <input type="radio" name="rating" id="rating5" value="5"> 
+                    </div>
+                    <div class="radio">
+                        <label for="rating6"> 6 </label>
+                        <input type="radio" name="rating" id="rating6" value="6"> 
+                    </div>
+                    <div class="radio">
+                        <label for="rating7"> 7 </label>
+                        <input type="radio" name="rating" id="rating7" value="7"> 
+                    </div>
+                    <div class="radio">
+                        <label for="rating8"> 8 </label>
+                        <input type="radio" name="rating" id="rating8" value="8"> 
+                    </div>
+                    <div class="radio">
+                        <label for="rating9"> 9 </label>
+                        <input type="radio" name="rating" id="rating9" value="9"> 
+                    </div>
+                    <div class="radio">
+                        <label for="rating10"> 10 </label>
+                        <input type="radio" name="rating" id="rating10" value="10"> 
+                    </div>
+                    
+                    
+                </div>
+
+                <!-- Error message to be displayed if none of the buttons are checked -->
+                <div id="Error1"> 
+                    This question is required
+                </div>
+
+                <!-- Text area input for the reason behind the rating -->
+                <div class="Question">
+                    <label for="reasoning">Please tell us the reasoning behind this rating</label> <br><br>
+                    
+                        <textarea name="reasoning" id="reasoning"  rows="5"></textarea>
+                    
+                </div>
+
+                <!-- Error message to be displayed if text area is empty -->
+                <div id="Error2"> 
+                    This question is required
+                </div>
+
+                <!-- Drop down list input for method of accessing the page -->
+                <div class="Question">
+                    <label for="PageAccessed">How did you access this Web Page today? <br></label><br>
+                    <select name="PageAccessed" id="PageAccessed">
+                        <option      selected disabled> &nbsp; &nbsp;  - Selected - </option>
+                        <option value="Phone">Phone</option> 
+                        <option value="Web Site">Web Site</option>
+                        <option value="Web Chat">Web Chat</option>
+                        <option value="Social Media ">Social Media</option>
+                        <option value="E-mail">E-mail</option>
+                    </select>
+                </div>
+
+                <!-- Drop down list input for preferred method of accessing the page-->
+                <div class="Question">
+                    <label for="PreferredAccess">If you access the Web Page again, Which would you prefer? <br></label><br>
+                    <select name="PreferredAccess" id="PreferredAccess"> 
+                        <option  selected disabled> &nbsp; &nbsp;  - Selected - </option>
+                        <option value="Phone">Phone</option> 
+                        <option value="Web Site">Web Site</option>
+                        <option value="Web Chat">Web Chat</option>
+                        <option value="Social Media ">Social Media</option>
+                        <option value="E-mail">E-mail</option>
+                    </select>
+                </div>
+
+                <!-- Submit and Reset buttons with the respective values -->
+                <input type="submit" value="Send" style="margin-left:150px;" >
+                <input type="reset" value="Reset">
+                <br> <br>
+            </form>
+        </div>
+
+        <!-- Message to display after successfull submission -->
+        <div id="onSubmission" style="display:none">
+            <div class="thankYouMessage">
+                Thank You! <br>
+                <span style="font-size:20px"> Thank you for taking the time to give us your feedback on your experience today</span><br><br>
+            </div>
+        </div>
+
+
+        <!-- Footer with all the links to the pages and the page editor -->
+        <div class="Footer">
+            
+            <div class="FooterLinks" > 
+                <br><br>
+                
+                <a href="MainPage.html"> HOME </a> 
+                <a href="comments.html"> COMMENTS </a>  
+                <a href="shop.html"> SHOP</a> 
+                <a href="quiz.html"> QUIZ</a> 
+                <a href="siteMap.html"> SITE MAP</a>  
+                <a href="gallery.html"> GALLERY</a>
+                <a href="aboutUs.html"> ABOUT US</a>
+                
+                <br>
+                <a href="Content01.html">Popular Attractions</a> 
+                <a href="Content02.html">Events and Festivals</a> 
+                <a href="Content03.html">Local Cuisine</a> 
+                <a href="Content04.html">Wildlife</a> 
+                <br>
+                Page author :<a href="Student02.html" > Osara Bandara </a>
+            </div>
+            <br>
+            <a href="MainPage.html"><img src="images/LogoOnlyWhite.png" alt="Logo" ></a>
+        </div>	 
+
+    </body>
+</html>

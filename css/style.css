@@ -1,0 +1,302 @@
+/* Fonts imported */
+	@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=Parisienne&display=swap');
+
+	
+	html{
+		scroll-behavior: smooth;
+	}
+
+	body{
+		font-family: 'Lato';
+		background-color:#e3e6eb;
+		margin:0;
+	}
+
+	/**NAVIGATION BAR**/
+
+/* Styling for the navigation bar with hidden overflow and a high z- index */
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow:hidden;
+		position:fixed;
+		top:0;
+		width:100%;
+		z-index: 100;
+		background-image: linear-gradient(#34455c,#08162a);
+	}
+
+/* All list elements right aligned */
+	li {
+		float:right;
+		margin-top:4px;
+		}
+	
+/* Styling for the anchored list items  */
+	li a {
+		display:block;
+		padding:14px 16px;
+		color:white;
+		font-weight: 2;
+		text-align:center;
+		text-decoration:none;
+		font-family: 'Lato';
+		font-weight:1;
+		}
+
+/* Styling for the linked acnchors on hover */
+	li a:hover {
+		font-size: 18px;
+	}
+
+/* Styling for the current webpage */
+	.active {
+		text-decoration: underline white;
+	}
+
+/* Styling for the logo on the navigation bar, FLeft aligned and linked to the home page */
+	.NavBar .image{
+		float:left;
+		margin-top: 0px;
+		height:60px;
+		margin-bottom: 2px; 
+		margin-left:4px;
+	}
+
+/* Styling for the anchor on the Logo on the navigation bar */
+	.NavBar .image a{
+		padding: 0;
+	}
+
+
+
+	/* FOOTER */
+
+/* Styling for the footer */
+	.Footer{
+		bottom: 0;
+		background-color: #34455c;
+		color: white;
+		font-size:15px;
+		text-align: center;
+	}
+
+/* Styling for the linked items on the footer */
+	.FooterLinks a{
+		color: inherit;
+		text-decoration: none;
+		margin: 1%;
+		display: inline;
+	}
+
+/* Styling for the linked footer items on hover */
+	.FooterLinks a:hover{
+		font-weight: bold;
+	}
+
+/* Styling for the logo on the footer */
+	.Footer img{
+		display:inline;
+		width:3%;
+		margin-top: 10px;
+		margin-bottom:25px;
+	}
+
+
+	
+	
+	
+	/* CONTENT PAGE */
+/* Styling for the main image and its container */
+	.MainImage{
+		height:480px;
+		filter:grayscale(40%);
+		object-fit: contain;
+		width:100%;
+		margin-top: 60px;
+	}
+
+	.MainImage img{
+		width: 100%;
+		height:100%;
+		object-fit: cover;
+	}
+
+
+/* Styling for the text over the image */
+	.TextOver{
+		position: absolute;
+		top:215px;
+		left : 28%;
+		font-family: 'Parisienne';
+		color: #FFF;
+		font-size: 9vw;
+	}
+
+/* Tag containing all of the content */
+	.Content{
+		background-color: #f8f8f8;
+		position:relative;
+		left: 10%;
+		width: 80% ;
+		text-align: justify;
+		box-shadow: 0 0 5px 10px #f8f8f8;
+		padding-bottom: 20px;
+		font-family: 'Lato';				
+		font-size: 18px;
+	}
+
+
+	.Content p {
+		text-indent: 50px;
+		color: rgb(74, 74, 74);
+		font-weight: 10;
+		line-height: 1.3;
+		margin-top: 1px;
+	}
+
+	
+/* Styling for the topic of the content page */
+	#ContentTopic{
+		font-size: 40px;
+		font-weight: 10;
+		margin-bottom: 2px;
+		font-family:'Arsenal';
+		text-align: center;
+	}
+
+/* Styling for the tag containing the in-page links  */
+	#links{
+		background-color: #d7d7e2;
+		border-radius: 20px;
+		margin: 0px 70px 50px;
+	}
+
+/* Styling for the in-page links */
+	#links a{
+		text-decoration: none;
+		color: rgb(91, 91, 139);
+		text-align: center;
+		font-weight: 1;
+	}
+
+/* Styling for the information of the written content */
+	#ContentInfo{
+		font-size: 15px;
+		margin-top: 0;
+		font-weight: 10;
+		color: grey;
+		}
+
+	#ContentInfo a:visited{
+		text-decoration: none;
+		color:inherit;
+	}
+
+/* Styling for the sub-topics */
+
+	h1.SubTopic {
+		color: black;
+		font-size: 24px;
+		margin-bottom: 0px;
+	}
+
+/* Styling for the festival names */
+	.Content h2 {
+		color: black;
+		font-size: 20px;
+		margin-bottom: 0px;
+	}
+
+	/* h2 a{
+		text-decoration: underline;
+		color:inherit
+		} */
+
+/* Styling for the date and place */
+	.Content h3 {
+		color:#000;
+		font-size: 16px;
+		
+	}
+
+/* Styling for the content containers */
+	.ContentRight, .ContentLeft, .Intro {
+		overflow: auto;
+	}
+	
+/* Styling for each content sub topic (Aligned left or right) */
+	.ContentLeft,.ContentRight	{
+		position: relative;
+		border:1px solid #fff;
+		margin-top: 25px;
+		min-height: 280px;
+		border-radius: 10px;
+	}
+
+/* Styling for the right aligned content  */
+	.ContentRight{
+		padding-right:10px;
+	}
+
+	div.ContentRight img{
+		height: 220px;
+		float: left;
+		padding: 10px;
+		padding-right: 20px;
+		width:300px;
+		object-fit:fill;
+		border-radius: 20px;
+		
+	}
+
+/* Styling for the left aligned content  */
+	.ContentLeft{
+		padding-left:10px;
+	}
+
+	div.ContentLeft img{
+		height: 220px;
+		float: right;
+		padding: 10px;
+		padding-left: 20px;
+		width:300px;
+		object-fit: fill;
+		border-radius: 20px;
+	}
+
+/* Styling for content without images */
+	.Intro	{
+		position: relative;
+		border:1px solid rgb(255, 255, 255);
+		margin-top: 20px;
+		border-radius: 10px;
+	}
+
+	
+/* Styling for the back to top button made with css */
+	.ToTop {
+		--offset: 50px;
+		position: sticky;
+		bottom: 19px;
+		margin-right: 10px;
+		left: 92%;
+		margin-top: calc(100vh + var(--offset));
+
+		color: #FFF;
+		text-decoration: none;
+		padding: 10px;
+		font-family: 'Lato';
+		color: #000;
+		border: 2px solid #000;
+		border-radius: 100px;
+		white-space: nowrap;
+	}	
+
+	
+
+
+
+
